@@ -1,0 +1,241 @@
+:root {
+    --black: #0B0C10;
+    --grey: #1F2833;
+    --tan: #C5C6C7;
+    --light-blue: #66FCF1;
+    --dark-blue: #45A29E;
+    --white: #FFFFFF;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--tan);
+    text-align: center;
+    background-color: var(--grey);
+}
+
+a {
+    color: var(--light-blue);
+}
+
+a:visited {
+    color: var(--light-blue);
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    position: fixed;
+    top: 0;
+    padding: 0px 2vw;
+    z-index: 2;
+}
+
+nav ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+}
+
+nav a {
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    background-color: var(--slate-gray);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+#welcome-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-image: url('smoke-376543_cropped.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#witty-catchphrase h1 {
+    font-size: 8vw;
+    font-weight: bolder;
+    text-shadow: 5px 10px 5px rgba(0,0,0,1);
+    vertical-align: middle;
+    color: var(--light-blue);
+}
+
+.blink {
+    vertical-align: text-bottom;
+    animation: blinking 1s infinite;
+}
+
+#projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 7vh;
+}
+
+#project-title {
+    color: var(--grey);
+    background-color: var(--dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-tile {
+    height: 380px;
+    width: 380px;
+    min-width: 380px;
+    box-shadow: 5px 10px 15px 5px rgba(0,0,0,0.8);
+    margin: 1vw;
+}
+
+/* Start - Based on https://pavenum.com/en/images-and-text-overlays-in-html-css/ */
+
+.overlay-image {
+    position: relative;
+    width: 100%;
+}
+
+.overlay-image .image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay-image .text {
+    font-size: 24px;
+    text-shadow: 2px 2px 2px #000;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+.overlay-image .hover {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.overlay-image:hover .hover {
+    opacity: 1;
+}
+
+.overlay-image .normal {
+    transition: .5s ease;
+}
+
+.overlay-image:hover .normal {
+    opacity: 0;
+}
+
+.overlay-image .hover {
+    background-color: rgba(0,0,0,0.6);
+}
+
+/* End - Based on https://pavenum.com/en/images-and-text-overlays-in-html-css/ */
+
+footer {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-top: 1vw;
+    padding: 0px 2vw;
+    background-color: var(--dark-blue);
+}
+
+footer a {
+    text-decoration: none;
+    white-space: nowrap;
+    color: var(--white);
+}
+
+footer a:visited {
+    color: var(--grey);
+}
+
+footer i.fab {
+    margin-right: 1vw;
+}
+
+nav li:hover, footer a:hover {
+    transform: scale(1.1);
+}
+
+@media (min-width: 1700px) {
+    #witty-catchphrase h1 {
+        font-size: 138px;
+    }
+}
+
+@media (max-width: 550px) {
+    header {
+        justify-content: center;
+    }
+
+    nav a, footer a {
+        font-size: 16px;
+    }
+
+    #about {
+        height: 50vh;
+    }
+}
+
+@keyframes blinking {
+    0%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
